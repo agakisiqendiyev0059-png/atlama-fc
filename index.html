@@ -1,148 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101114">
-<title>Atləmə FC | Rəsmi statistika</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAMA FC | Statistikalar</title>
 <style>
-:root{--bg:#101114;--panel:#191b20;--panel2:#22252c;--gold:#e8bd55;--muted:#a6a8b0;--line:#30333b;--white:#f5f5f6;--green:#71d6a0}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#292313 0,#101114 34rem);color:var(--white);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
-header{padding:28px max(18px,calc((100% - 1100px)/2));border-bottom:1px solid var(--line);background:#101114dd}
-.brand{display:flex;align-items:center;gap:14px}.crest{width:52px;height:58px;border:2px solid var(--gold);clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%);display:grid;place-items:center;color:var(--gold);font-weight:900}
-h1{margin:0;font-size:clamp(24px,5vw,38px);letter-spacing:2px}.sub{color:var(--muted);font-size:12px;letter-spacing:2px;margin-top:4px}
-main{max-width:1100px;margin:24px auto;padding:0 16px 60px}.hero{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:20px 0}
-h2{font-size:22px;margin:0 0 6px}.muted{color:var(--muted)}.pill{border:1px solid #5d4b22;color:var(--gold);padding:7px 11px;border-radius:99px;font-size:12px}
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0}.tab{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:13px 8px;border-radius:12px;font-weight:700;cursor:pointer}.tab.active{background:#332a16;border-color:var(--gold);color:var(--gold)}
-.card{background:linear-gradient(145deg,#1d2026,#17191e);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 10px 30px #0002}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:var(--panel2);border-radius:12px;padding:14px}.stat b{display:block;font-size:25px;color:var(--gold)}.stat span{font-size:12px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;min-width:500px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}td:first-child{font-weight:700}.rank{color:var(--gold);width:38px}.table-wrap{overflow-x:auto}.points{font-weight:800;color:var(--gold)}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button,.btn{background:var(--gold);color:#17130a;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.secondary{background:var(--panel2);color:var(--white);border:1px solid var(--line)}.danger{background:#5b2626;color:white}
-input,select{width:100%;background:#101216;color:white;border:1px solid var(--line);border-radius:9px;padding:11px;margin:5px 0 12px}
-label{font-size:12px;color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.hidden{display:none!important}.notice{padding:12px;border-radius:10px;background:#302918;color:#f0d99e;font-size:13px;line-height:1.5}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
-@media(max-width:600px){.tabs{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:10px}.stat b{font-size:20px}.formgrid{grid-template-columns:1fr}}
+:root{--bg:#090b10;--panel:#141821;--gold:#e8bd55;--muted:#9ba3b2;--line:#2a303c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#20202a,#090b10 48%);color:#f5f5f5;font:15px system-ui,Arial}
+header{padding:28px 16px 20px;text-align:center;border-bottom:1px solid var(--line)}
+.logo{font-weight:950;letter-spacing:4px;color:var(--gold);font-size:clamp(27px,7vw,42px)}header p{color:var(--muted);margin:7px 0}
+main{max-width:1000px;margin:auto;padding:18px 12px 50px}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0 18px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:11px 7px;background:#171c26;color:#ddd}
+button.active,button.primary{background:linear-gradient(135deg,#f2d27b,#b98728);color:#151515;border-color:#f2d27b;font-weight:800}
+.panel{background:#121721;border:1px solid var(--line);border-radius:15px;padding:16px;margin-bottom:14px}
+h2{font-size:19px;margin:0 0 13px;color:var(--gold)}.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 7px;border-bottom:1px solid var(--line)}th{color:var(--gold);font-size:12px;text-transform:uppercase}
+td:last-child,th:last-child{text-align:right}.rank{color:var(--gold);font-weight:900;width:34px}
+input,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#090d14;color:white;margin:5px 0 10px}
+label{font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.hidden{display:none}.note{font-size:12px;color:var(--muted);line-height:1.5}
+@media(max-width:520px){nav{grid-template-columns:repeat(2,1fr)}.panel{padding:12px}th,td{padding:9px 4px;font-size:13px}}
 </style>
 </head>
 <body>
-<header><div class="brand"><div class="crest">AFC</div><div><h1>ATLAMA FC</h1><div class="sub">OFFICIAL CLUB STATISTICS</div></div></div></header>
+<header><div class="logo">ATLAMA FC</div><p>Komandanın rəsmi statistikası</p></header>
 <main>
-  <section class="hero"><div><h2>Klub statistikası</h2><div class="muted">Oyunçular • Nailiyyətlər • Mövsümlər</div></div><span class="pill" id="connection">Demo rejimi</span></section>
-  <div class="stats">
-    <div class="stat"><b id="playerCount">14</b><span>FUTBOLÇU</span></div>
-    <div class="stat"><b id="goalTotal">0</b><span>QOL</span></div>
-    <div class="stat"><b id="assistTotal">0</b><span>ASİST</span></div>
-  </div>
-  <nav class="tabs">
-    <button class="tab active" data-tab="goals">⚽ Qollar</button>
-    <button class="tab" data-tab="assists">🎯 Asistlər</button>
-    <button class="tab" data-tab="awards">🏆 Kuboklar</button>
-    <button class="tab" data-tab="ranking">👑 Xal sıralaması</button>
-  </nav>
-  <section class="card">
-    <div class="hero"><div><h2 id="sectionTitle">Qol sıralaması</h2><div class="muted" id="sectionHint">Bütün futbolçuların vurduğu qollar</div></div><span class="pill">ATLAMA FC</span></div>
-    <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
-  </section>
-  <section class="card">
-    <div class="hero"><div><h2>Admin paneli</h2><div class="muted">Statistikaları yalnız təsdiqlənmiş admin dəyişə bilər</div></div></div>
-    <div id="signedOut">
-      <p class="muted">Məlumatları redaktə etmək üçün admin Google hesabı ilə daxil olmalıdır.</p>
-      <button id="loginBtn">Google ilə admin girişi</button>
-    </div>
-    <div id="signedIn" class="hidden">
-      <div class="notice">Admin kimi daxil oldun: <b id="adminEmail"></b></div>
-      <div class="formgrid" style="margin-top:14px">
-        <div><label>Futbolçu</label><select id="playerSelect"></select></div>
-        <div><label>Qol sayı</label><input id="goalsInput" type="number" min="0" value="0"></div>
-        <div><label>Assist sayı</label><input id="assistsInput" type="number" min="0" value="0"></div>
-        <div><label>M.O sayı</label><input id="moInput" type="number" min="0" value="0"></div>
-        <div><label>Altın Ayakkabı (A.A)</label><input id="aaInput" type="number" min="0" value="0"></div>
-        <div><label>Altın Corab (A.C)</label><input id="acInput" type="number" min="0" value="0"></div>
-        <div><label>Altın Müdafiəçi (A.M)</label><input id="amInput" type="number" min="0" value="0"></div>
-        <div><label>Altın Əl (A.Ə)</label><input id="aeInput" type="number" min="0" value="0"></div>
-        <div><label>Puskas mükafatı sayı</label><input id="puskasInput" type="number" min="0" value="0"></div>
-      </div>
-      <div class="actions"><button id="saveBtn">Dəyişiklikləri yadda saxla</button><button class="secondary" id="logoutBtn">Çıxış</button></div>
-      <p class="muted" style="font-size:12px">Qeyd: burada daxil edilən rəqəmlər həmin futbolçunun ümumi statistikasıdır, yeni əlavə olunan say deyil.</p>
-    </div>
-    <div id="setupNotice" class="notice" style="margin-top:14px">Saytı internetdə hamı üçün paylaşmaq və məlumatları cihazlar arasında sinxronlaşdırmaq üçün aşağıdakı README təlimatında Firebase qurulumu tamamlanmalıdır. Hazırda demo məlumatları yalnız bu brauzerdə saxlanılır.</div>
-  </section>
+<nav id="tabs">
+<button class="active" data-tab="goals">Qollar</button><button data-tab="assists">Assistlər</button>
+<button data-tab="awards">Mükafatlar</button><button data-tab="points">Xal sıralaması</button>
+</nav>
+<section class="panel" id="content"></section>
+<section class="panel">
+<h2>Admin paneli</h2>
+<p class="muted" id="authStatus">Dəyişiklik etmək üçün admin Google hesabı ilə daxil ol.</p>
+<div class="actions"><button class="primary" id="login">Google ilə daxil ol</button><button id="logout" class="hidden">Çıxış</button></div>
+<div id="editor" class="hidden">
+<h2 style="margin-top:20px">Statistika əlavə et / yenilə</h2>
+<div class="grid">
+<div><label>Oyunçu</label><select id="player"></select></div>
+<div><label>Əməliyyat</label><select id="kind"><option value="goals">Qol</option><option value="assists">Assist</option><option value="mo">M.O</option><option value="aa">A.A — Altın Ayakkabı</option><option value="ac">A.C — Altın Corab</option><option value="am">A.M — Altın Müdafiəçi</option><option value="ae">A.Ə — Altın Əl</option><option value="puskas">Puskas</option></select></div>
+<div><label>Miqdar</label><input id="amount" type="number" min="0" value="1"></div>
+</div>
+<div class="actions"><button class="primary" id="save">Yadda saxla</button><button id="reset">Sıfırla</button></div>
+<p class="note">Qeyd: Mükafatlar bölməsində M.O, A.A, A.C, A.M, A.Ə və Puskas göstərilir. Xallar avtomatik hesablanır.</p>
+</div>
+</section>
+<p class="note">ATLAMA FC · Xallar: qol 3, assist 2, M.O 10, A.A/A.C 20, A.M/A.Ə 50, Puskas 15.</p>
 </main>
-<footer>ATLAMA FC • Rəsmi statistika platforması</footer>
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const ADMIN_EMAIL = "agakisi.qendiyev0059@gmail.com";
-const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  appId: "YOUR_FIREBASE_APP_ID"
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,doc,setDoc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const ADMIN_EMAIL="agakisi.qendiyev0059@gmail.com";
+const firebaseConfig={
+ apiKey:"AIzaSyCkK2yMsx8suyWFdo0P70F6-_p0IOhUeHI",
+ authDomain:"atlama-fc-91a5b.firebaseapp.com",
+ projectId:"atlama-fc-91a5b",
+ storageBucket:"atlama-fc-91a5b.firebasestorage.app",
+ messagingSenderId:"152886313047",
+ appId:"1:152886313047:web:e9ba635746a0d655742312",
+ measurementId:"G-30N4NJ285X"
 };
-const names = ["Mehran","Röyal","Vaqif","H.Səid","Etibar","Elməddin","Hicrat","Səccad","Rinat","Elgiz","Ə.Səid","Sənan","Mustafa","Rüzgar"];
-const blank = n => ({name:n,goals:0,assists:0,mo:0,aa:0,ac:0,am:0,ae:0,puskas:0});
-let players = names.map(blank), auth=null, db=null, isConfigured=false, currentUser=null, activeTab="goals";
-const $ = id => document.getElementById(id);
-const points = p => p.goals*3+p.assists*2+p.mo*10+p.aa*20+p.ac*20+p.am*50+p.ae*50+p.puskas*15;
-const count = key => players.reduce((s,p)=>s+(Number(p[key])||0),0);
-const awards = [{key:"mo",name:"M.O",pts:10},{key:"aa",name:"A.A · Altın Ayakkabı",pts:20},{key:"ac",name:"A.C · Altın Corab",pts:20},{key:"am",name:"A.M · Altın Müdafiəçi",pts:50},{key:"ae",name:"A.Ə · Altın Əl",pts:50},{key:"puskas",name:"Puskas",pts:15}];
+const players=["Mehran","Röyal","Vaqif","H.Səid","Etibar","Elməddin","Hicrat","Səccad","Rinat","Elgiz","Ə.Səid","Sənan","Mustafa","Rüzgar"];
+const blank=()=>Object.fromEntries(players.map(p=>[p,{goals:0,assists:0,mo:0,aa:0,ac:0,am:0,ae:0,puskas:0}]));
+let data=blank(),user=null,db,auth,tab="goals";
+const weights={goals:3,assists:2,mo:10,aa:20,ac:20,am:50,ae:50,puskas:15};
+const names={mo:"M.O",aa:"A.A",ac:"A.C",am:"A.M",ae:"A.Ə",puskas:"Puskas"};
+const content=document.querySelector("#content");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function pts(p){return Object.entries(weights).reduce((n,[k,w])=>n+(Number(p[k])||0)*w,0)}
 function render(){
-  $("playerCount").textContent=players.length;$("goalTotal").textContent=count("goals");$("assistTotal").textContent=count("assists");
-  const configs={
-    goals:{title:"Qol sıralaması",hint:"Bütün futbolçuların vurduğu qollar",key:"goals",head:["#","Futbolçu","Qol"]},
-    assists:{title:"Assist sıralaması",hint:"Bütün futbolçuların assistləri",key:"assists",head:["#","Futbolçu","Assist"]},
-    awards:{title:"Kuboklar və mükafatlar",hint:"Futbolçuların qazandığı fərdi mükafatlar",key:null,head:["#","Futbolçu","Mükafat","Say"]},
-    ranking:{title:"Ümumi xal sıralaması",hint:"Xallar nailiyyətlərə əsasən avtomatik hesablanır",key:"points",head:["#","Futbolçu","Xal"]}
-  };
-  const c=configs[activeTab];$("sectionTitle").textContent=c.title;$("sectionHint").textContent=c.hint;
-  $("tableHead").innerHTML="<tr>"+c.head.map(x=>`<th>${x}</th>`).join("")+"</tr>";
-  let rows=[];
-  if(activeTab==="awards"){
-    rows=players.flatMap(p=>awards.filter(a=>p[a.key]>0).map(a=>({name:p.name,award:a.name,value:p[a.key],sort:p[a.key]}))).sort((a,b)=>b.sort-a.sort||a.name.localeCompare(b.name));
-    $("tableBody").innerHTML=rows.length?rows.map((r,i)=>`<tr><td class="rank">${i+1}</td><td>${escapeHtml(r.name)}</td><td>${r.award}</td><td>${r.value}</td></tr>`).join(""):`<tr><td colspan="4" class="muted">Hələ mükafat məlumatı əlavə edilməyib.</td></tr>`;
-  }else{
-    rows=[...players].sort((a,b)=>(c.key==="points"?points(b)-points(a):b[c.key]-a[c.key])||a.name.localeCompare(b.name));
-    $("tableBody").innerHTML=rows.map((p,i)=>`<tr><td class="rank">${i+1}</td><td>${escapeHtml(p.name)}</td><td class="${activeTab==="ranking"?"points":""}">${c.key==="points"?points(p):p[c.key]}</td></tr>`).join("");
-  }
-  $("playerSelect").innerHTML=players.map((p,i)=>`<option value="${i}">${escapeHtml(p.name)}</option>`).join("");
-  loadSelected();
+ let rows=players.map(p=>({p,...data[p]}));
+ if(tab==="goals"||tab==="assists"){let key=tab;rows.sort((a,b)=>b[key]-a[key]);content.innerHTML=`<h2>${tab==="goals"?"Qol krallığı":"Assist liderləri"}</h2><table><tr><th>#</th><th>Oyunçu</th><th>${tab==="goals"?"Qol":"Assist"}</th></tr>${rows.map((r,i)=>`<tr><td class="rank">${i+1}</td><td>${esc(r.p)}</td><td>${r[key]}</td></tr>`).join("")}</table>`}
+ else if(tab==="awards"){content.innerHTML=`<h2>Mükafatlar</h2><table><tr><th>Oyunçu</th>${Object.keys(names).map(k=>`<th>${names[k]}</th>`).join("")}</tr>${rows.map(r=>`<tr><td>${esc(r.p)}</td>${Object.keys(names).map(k=>`<td>${r[k]||0}</td>`).join("")}</tr>`).join("")}</table>`}
+ else {rows.sort((a,b)=>pts(b)-pts(a));content.innerHTML=`<h2>Xal sıralaması</h2><table><tr><th>#</th><th>Oyunçu</th><th>Xal</th></tr>${rows.map((r,i)=>`<tr><td class="rank">${i+1}</td><td>${esc(r.p)}</td><td><b>${pts(r)}</b></td></tr>`).join("")}</table>`}
 }
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function loadSelected(){const p=players[Number($("playerSelect").value)||0];if(!p)return;for(const [key,id] of Object.entries({goals:"goalsInput",assists:"assistsInput",mo:"moInput",aa:"aaInput",ac:"acInput",am:"amInput",ae:"aeInput",puskas:"puskasInput"}))$(id).value=p[key]||0;}
-function localSave(){try{localStorage.setItem("atlama_fc_demo",JSON.stringify(players));}catch{}}
-function showAdmin(on){$("signedOut").classList.toggle("hidden",on);$("signedIn").classList.toggle("hidden",!on);$("setupNotice").classList.toggle("hidden",isConfigured&&on);}
-document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{activeTab=b.dataset.tab;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));render();}));
-$("playerSelect").addEventListener("change",loadSelected);
-$("saveBtn").addEventListener("click",async()=>{
-  if(!currentUser||currentUser.email!==ADMIN_EMAIL)return alert("Bu əməliyyat üçün admin icazəsi yoxdur.");
-  const i=Number($("playerSelect").value), p={...players[i]};
-  for(const [key,id] of Object.entries({goals:"goalsInput",assists:"assistsInput",mo:"moInput",aa:"aaInput",ac:"acInput",am:"amInput",ae:"aeInput",puskas:"puskasInput"})){
-    const v=Number($(id).value);if(!Number.isInteger(v)||v<0)return alert("Bütün göstəricilər 0 və ya daha böyük tam ədəd olmalıdır.");p[key]=v;
-  }
-  players[i]=p;
-  if(db){await setDoc(doc(db,"club","statistics"),{players,updatedAt:new Date().toISOString()});}
-  else localSave();
-  render();alert("Statistika yadda saxlanıldı.");
-});
-$("loginBtn").addEventListener("click",async()=>{if(!auth)return alert("Əvvəlcə Firebase qurulumu tamamlanmalıdır. README faylına bax.");try{await signInWithPopup(auth,new GoogleAuthProvider());}catch(e){alert("Giriş alınmadı: "+e.message);}});
-$("logoutBtn").addEventListener("click",()=>signOut(auth));
-try{
-  const saved=localStorage.getItem("atlama_fc_demo");if(saved){const parsed=JSON.parse(saved);if(Array.isArray(parsed)&&parsed.length)players=parsed;}
-}catch{}
-if(firebaseConfig.apiKey!=="YOUR_FIREBASE_API_KEY"){
-  isConfigured=true;const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);
-  $("connection").textContent="Onlayn baza aktiv";
-  onSnapshot(doc(db,"club","statistics"),snap=>{if(snap.exists()&&Array.isArray(snap.data().players)){players=snap.data().players;render();}});
-  onAuthStateChanged(auth,async user=>{
-    currentUser=user&&user.email===ADMIN_EMAIL?user:null;
-    showAdmin(!!currentUser);$("adminEmail").textContent=currentUser?.email||"";
-    if(user&&user.email!==ADMIN_EMAIL){await signOut(auth);alert("Bu Google hesabının admin icazəsi yoxdur.");}
-  });
-}else{$("connection").textContent="Demo rejimi";showAdmin(false);}
+document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x===b));tab=b.dataset.tab;render()});
+document.querySelector("#player").innerHTML=players.map(p=>`<option>${esc(p)}</option>`).join("");
+const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);
+onSnapshot(doc(db,"club","statistics"),snap=>{if(snap.exists()){const v=snap.data();if(v.players)data=v.players;render()}});
+onAuthStateChanged(auth,u=>{user=u;const ok=!!u&&u.email===ADMIN_EMAIL&&u.emailVerified;document.querySelector("#authStatus").textContent=ok?`Admin: ${u.email}`:u?`Daxil olan hesab admin deyil: ${u.email}`:"Dəyişiklik etmək üçün admin Google hesabı ilə daxil ol.";document.querySelector("#editor").classList.toggle("hidden",!ok);document.querySelector("#login").classList.toggle("hidden",!!u);document.querySelector("#logout").classList.toggle("hidden",!u)});
+document.querySelector("#login").onclick=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){alert("Giriş alınmadı: "+e.message)}};
+document.querySelector("#logout").onclick=()=>signOut(auth);
+document.querySelector("#save").onclick=async()=>{if(!user||user.email!==ADMIN_EMAIL||!user.emailVerified){alert("Admin icazəsi yoxdur.");return}const p=document.querySelector("#player").value,k=document.querySelector("#kind").value,n=Math.max(0,Number(document.querySelector("#amount").value)||0);data[p][k]=n;try{await setDoc(doc(db,"club","statistics"),{players:data,updatedAt:new Date().toISOString()});alert("Yadda saxlanıldı!")}catch(e){alert("Saxlama xətası: "+e.message)}render()};
+document.querySelector("#reset").onclick=()=>{document.querySelector("#amount").value=1};
 render();
 </script>
-</body>
-</html>
+</body></html>
