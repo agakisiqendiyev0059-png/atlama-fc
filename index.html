@@ -48,6 +48,18 @@ label{font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns
 <div><label>Miqdar</label><input id="amount" type="number" min="0" value="1"></div>
 </div>
 <div class="actions"><button class="primary" id="save">Yadda saxla</button><button id="reset">Sıfırla</button></div>
+<h2 style="margin-top:22px">Oyunçu kartı xüsusiyyətləri</h2>
+<div class="grid">
+<div><label>Oyunçu</label><select id="cardPlayer"></select></div>
+<div><label>Mövqe</label><select id="cardPosition"><option value="ST">ST — Hücumçu</option><option value="CF">CF — Mərkəz hücumçu</option><option value="LW">LW — Sol cinah</option><option value="RW">RW — Sağ cinah</option><option value="CAM">CAM — Hücumameyilli yarımmüdafiəçi</option><option value="CM">CM — Mərkəz yarımmüdafiəçi</option><option value="CDM">CDM — Dayaq yarımmüdafiəçi</option><option value="LM">LM — Sol yarımmüdafiəçi</option><option value="RM">RM — Sağ yarımmüdafiəçi</option><option value="CB">CB — Stoper</option><option value="LB">LB — Sol müdafiəçi</option><option value="RB">RB — Sağ müdafiəçi</option><option value="GK">GK — Qapıçı</option></select></div>
+<div><label>PAC — Sürət (1–99)</label><input id="card_pac" type="number" min="1" max="99" value="50"></div>
+<div><label>SHO — Zərbə (1–99)</label><input id="card_sho" type="number" min="1" max="99" value="50"></div>
+<div><label>PAS — Ötürmə (1–99)</label><input id="card_pas" type="number" min="1" max="99" value="50"></div>
+<div><label>DRI — Driblinq (1–99)</label><input id="card_dri" type="number" min="1" max="99" value="50"></div>
+<div><label>DEF — Müdafiə (1–99)</label><input id="card_def" type="number" min="1" max="99" value="50"></div>
+<div><label>PHY — Fiziki güc (1–99)</label><input id="card_phy" type="number" min="1" max="99" value="50"></div>
+</div>
+<div class="actions"><button class="primary" id="saveCardStats">Kart xüsusiyyətlərini yadda saxla</button></div>
 <h2 style="margin-top:22px">Oyunçu şəkli əlavə et</h2>
 <label>Yuxarıda seçilmiş oyunçu üçün şəkil</label><input id="photoFile" type="file" accept="image/*">
 <div class="actions"><button class="primary" id="savePhoto">Şəkli yadda saxla</button></div>
